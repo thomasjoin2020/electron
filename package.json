@@ -1,6 +1,6 @@
 {
   "name": "electron-puppeteer-quick-start",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal Electron application with puppeteer",
   "main": "main.js",
   "scripts": {
@@ -12,7 +12,8 @@
   "build": {
     "appId": "com.electron.quickstart",
     "win": {
-      "target": "nsis"
+      "target": "NSIS",
+      "icon": "./icon.icns"
     },
     "mac": {
       "target": [
@@ -22,14 +23,10 @@
       "icon": "icon.icns",
       "category": "your.app.category.type"
     },
-    "win": {
-      "target": "NSIS",
-      "icon": "./icon.icns"
-    },
     "linux": {
       "target": "deb",
       "category": "Development"
-    }  
+    }
   },
   "repository": {
     "type": "git",
