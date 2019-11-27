@@ -5,15 +5,36 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "build"
+    "dist": "build",
+    "build": "electron-builder build --mac --win --publish never",
+    "deploy": "electron-builder build --mac --win --publish always"
   },
   "build": {
     "appId": "com.electron.quickstart",
     "win": {
       "target": "nsis"
-    }
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "icon.icns",
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "./icon.icns"
+    },
+    "linux": {
+      "target": "deb",
+      "category": "Development"
+    }  
   },
-  "repository": "https://github.com/Raidus/electron-puppeteer-quick-start",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomasjoin2020/electron.git"
+  },
   "keywords": [
     "Electron",
     "quick",
@@ -24,14 +45,11 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "dependencies": {
+    "electron-updater": "^4.2.0",
     "puppeteer": "^0.12.0"
   },
   "devDependencies": {
     "electron": "^1.8.1",
     "electron-builder": "^19.45.4"
-  },
-  "repository": {
-    "type" : "git",
-    "url" : "https://github.com/thomasjoin2020/electron.git"
   }
 }
